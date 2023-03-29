@@ -1,0 +1,11 @@
+name: SmartBear Supported Issue Comment Created
+
+on:
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  call-workflow:
+    uses: pact-foundation/.github/.github/workflows/smartbear-issue-comment-created.yml@master
+    secrets: inherit

@@ -1,0 +1,193 @@
+I, [2023-03-29T23:24:43.633800 #900825]  INFO -- : Registered expected interaction GET /heroes/42
+D, [2023-03-29T23:24:43.634251 #900825] DEBUG -- : {
+  "description": "a GET request for a hero",
+  "providerState": "a hero exists",
+  "request": {
+    "method": "GET",
+    "path": "/heroes/42",
+    "headers": {
+      "Accept": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json",
+          "matcher": {"json_class":"Regexp","o":0,"s":"application\\/json"}
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json",
+          "matcher": {"json_class":"Regexp","o":0,"s":"application\\/json"}
+        }
+      }
+    },
+    "body": {
+      "json_class": "Pact::SomethingLike",
+      "contents": {
+        "id": 42,
+        "name": "Superman",
+        "superpower": "flying",
+        "universe": "DC"
+      }
+    }
+  }
+}
+I, [2023-03-29T23:24:43.654549 #900825]  INFO -- : Received request GET /heroes/42
+D, [2023-03-29T23:24:43.654728 #900825] DEBUG -- : {
+  "path": "/heroes/42",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json",
+    "Referer": "http://localhost/",
+    "User-Agent": "Mozilla/5.0 (linux) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0",
+    "Accept-Language": "en",
+    "Origin": "http://localhost",
+    "Host": "127.0.0.1:8080",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2023-03-29T23:24:43.654947 #900825]  INFO -- : Found matching response for GET /heroes/42
+D, [2023-03-29T23:24:43.655100 #900825] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": {
+      "json_class": "Pact::Term",
+      "data": {
+        "generate": "application/json",
+        "matcher": {
+          "json_class": "Regexp",
+          "o": 0,
+          "s": "application\\/json"
+        }
+      }
+    }
+  },
+  "body": {
+    "json_class": "Pact::SomethingLike",
+    "contents": {
+      "id": 42,
+      "name": "Superman",
+      "superpower": "flying",
+      "universe": "DC"
+    }
+  }
+}
+I, [2023-03-29T23:24:43.670022 #900825]  INFO -- : Verifying - interactions matched
+I, [2023-03-29T23:24:43.673733 #900825]  INFO -- : Cleared interactions
+I, [2023-03-29T23:24:43.678962 #900825]  INFO -- : Registered expected interaction POST /heroes
+D, [2023-03-29T23:24:43.679286 #900825] DEBUG -- : {
+  "description": "a POST request to create a hero",
+  "providerState": "provider allows hero creation",
+  "request": {
+    "method": "POST",
+    "path": "/heroes",
+    "headers": {
+      "Accept": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json",
+          "matcher": {"json_class":"Regexp","o":0,"s":"application\\/json"}
+        }
+      },
+      "Content-Type": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json",
+          "matcher": {"json_class":"Regexp","o":0,"s":"application\\/json"}
+        }
+      }
+    },
+    "body": {
+      "name": "Superman",
+      "superpower": "flying",
+      "universe": "DC"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json",
+          "matcher": {"json_class":"Regexp","o":0,"s":"application\\/json"}
+        }
+      }
+    },
+    "body": {
+      "json_class": "Pact::SomethingLike",
+      "contents": {
+        "id": 42,
+        "name": "Superman",
+        "superpower": "flying",
+        "universe": "DC"
+      }
+    }
+  }
+}
+I, [2023-03-29T23:24:43.687829 #900825]  INFO -- : Received request POST /heroes
+D, [2023-03-29T23:24:43.687989 #900825] DEBUG -- : {
+  "path": "/heroes",
+  "query": "",
+  "method": "post",
+  "body": {
+    "name": "Superman",
+    "superpower": "flying",
+    "universe": "DC"
+  },
+  "headers": {
+    "Content-Length": "57",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Referer": "http://localhost/",
+    "User-Agent": "Mozilla/5.0 (linux) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0",
+    "Accept-Language": "en",
+    "Origin": "http://localhost",
+    "Host": "127.0.0.1:8080",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2023-03-29T23:24:43.688344 #900825]  INFO -- : Found matching response for POST /heroes
+D, [2023-03-29T23:24:43.688499 #900825] DEBUG -- : {
+  "status": 201,
+  "headers": {
+    "Content-Type": {
+      "json_class": "Pact::Term",
+      "data": {
+        "generate": "application/json",
+        "matcher": {
+          "json_class": "Regexp",
+          "o": 0,
+          "s": "application\\/json"
+        }
+      }
+    }
+  },
+  "body": {
+    "json_class": "Pact::SomethingLike",
+    "contents": {
+      "id": 42,
+      "name": "Superman",
+      "superpower": "flying",
+      "universe": "DC"
+    }
+  }
+}
+I, [2023-03-29T23:24:43.693683 #900825]  INFO -- : Verifying - interactions matched
+I, [2023-03-29T23:24:43.697314 #900825]  INFO -- : Cleared interactions
+I, [2023-03-29T23:24:43.701122 #900825]  INFO -- : Updating pact for mdr-api at /home/francesco/devel/medidata/pact-demo/pact-react-consumer/pacts/mdr-ui-mdr-api.json
+I, [2023-03-29T23:24:43.702634 #900825]  INFO -- : *****************************************************************************
+I, [2023-03-29T23:24:43.702711 #900825]  INFO -- : Updating existing file ./home/francesco/devel/medidata/pact-demo/pact-react-consumer/pacts/mdr-ui-mdr-api.json as pactfile_write_mode is :update
+I, [2023-03-29T23:24:43.702738 #900825]  INFO -- : Only interactions defined in this test run will be updated.
+I, [2023-03-29T23:24:43.702759 #900825]  INFO -- : As interactions are identified by description and provider state, pleased note that if either of these have changed, the old interactions won't be removed from the pact file until the specs are next run with :pactfile_write_mode => :overwrite.
+I, [2023-03-29T23:24:43.702778 #900825]  INFO -- : *****************************************************************************

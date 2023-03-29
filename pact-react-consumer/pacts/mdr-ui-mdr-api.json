@@ -1,0 +1,101 @@
+{
+  "consumer": {
+    "name": "mdr-ui"
+  },
+  "provider": {
+    "name": "mdr-api"
+  },
+  "interactions": [
+    {
+      "description": "a GET request for a hero",
+      "providerState": "a hero exists",
+      "request": {
+        "method": "GET",
+        "path": "/heroes/42",
+        "headers": {
+          "Accept": "application/json"
+        },
+        "matchingRules": {
+          "$.headers.Accept": {
+            "match": "regex",
+            "regex": "application\\/json"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 42,
+          "name": "Superman",
+          "superpower": "flying",
+          "universe": "DC"
+        },
+        "matchingRules": {
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json"
+          },
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "a POST request to create a hero",
+      "providerState": "provider allows hero creation",
+      "request": {
+        "method": "POST",
+        "path": "/heroes",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "name": "Superman",
+          "superpower": "flying",
+          "universe": "DC"
+        },
+        "matchingRules": {
+          "$.headers.Accept": {
+            "match": "regex",
+            "regex": "application\\/json"
+          },
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 42,
+          "name": "Superman",
+          "superpower": "flying",
+          "universe": "DC"
+        },
+        "matchingRules": {
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json"
+          },
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
